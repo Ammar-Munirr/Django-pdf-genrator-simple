@@ -13,14 +13,15 @@ def pdf_gen(request):
     c = canvas.Canvas(buff,pagesize=letter,bottomup=0)
     textob = c.beginText()
     textob.setTextOrigin(inch,inch)
+    textob.setFont('Helvetica',24)
+    textob.textLine('Agrement With User !!')
+    c.drawText(textob)
     textob.setFont('Helvetica',12)
-    lines = [
-        'This is my first line',
-        'This is the second one',
-        'This one is third'
-    ]
+    textsfile = "/home/able/Desktop/django_pdf/textfile/demo.txt"
+    file = open(textsfile,'r')
+    lines = file.readlines()
     for line in lines:
-        textob.textLine(line)
+        textob.textLine(line.strip())
     c.drawText(textob)
     c.showPage()
     c.save()
