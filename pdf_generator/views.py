@@ -17,7 +17,7 @@ def pdf_gen(request):
     textob.textLine('Agrement With User !!')
     c.drawText(textob)
     textob.setFont('Helvetica',12)
-    textsfile = "/home/able/Desktop/django_pdf/textfile/demo.txt"
+    textsfile = "/home/able/Desktop/django_pdf/textfile/demo.txt" #change it path according to your configurations :) It's just an example as we can also write text from text file.
     file = open(textsfile,'r')
     lines = file.readlines()
     for line in lines:
